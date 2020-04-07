@@ -1,8 +1,10 @@
 //all auth routes here
+//we make all the basic routing and call controllers to do the further job
+
 var express = require('express')
 var router = express.Router()
 const {check} = require('express-validator')
-const {signout,signup,signin}=require('../controllers/auth')
+const {signout,signup,signin,isSignedIn}=require('../controllers/auth')
 
 router.post("/signup",[
     check("name","name should be atleast 3 character").isLength({min:3}),
@@ -16,5 +18,8 @@ router.post("/signin",[
 ],signin)
 
 router.get("/signout",signout)
+router.get("/test",isSignedIn,(req,res)=>{
+    res.json(req.auth)
+})
 
 module.exports = router;
