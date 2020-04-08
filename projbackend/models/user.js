@@ -1,5 +1,3 @@
-
-//hitesh cha code
 var mongoose = require("mongoose");
 const crypto = require("crypto");
 const uuidv1 = require("uuid/v1");
@@ -15,8 +13,7 @@ var userSchema = new mongoose.Schema(
     lastname: {
       type: String,
       maxlength: 32,
-      trim: true,
-      required:true
+      trim: true
     },
     email: {
       type: String,
@@ -57,7 +54,7 @@ userSchema
   });
 
 userSchema.methods = {
-  authenticate: function(plainpassword) {
+  autheticate: function(plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password;
   },
 
