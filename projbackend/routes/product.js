@@ -1,7 +1,7 @@
 const express=require("express")
 const router = express.Router()
 
-const {getProductById,createProduct,getProduct,photo,deleteProduct,updateProduct,getAllProducts}=require("../controllers/product")
+const {getProductById,createProduct,getProduct,photo,deleteProduct,updateProduct,getAllProducts,getAllUniquecategories}=require("../controllers/product")
 const {isSignedIn,isAdmin,isAuthenticated}=require("../controllers/auth")
 const {getUserById}=require("../controllers/user")
 
@@ -17,5 +17,8 @@ router.delete("/product/:productId/:userId",isSignedIn,isAuthenticated,isAdmin,d
 router.put("/product/:productId/:userId",isSignedIn,isAuthenticated,isAdmin,updateProduct)
 
 router.get("/products",getAllProducts)
+
+router.get("/products/categories",getAllUniquecategories)
+
 
 module.exports=router
