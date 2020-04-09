@@ -26,3 +26,36 @@ exports.createOrder =(req,res)=>{
         res.json(order)
     })
 }
+exports.getAllOrders=(req,res)=>{
+    Order.find()
+    .populate("user","_id name email")
+    .exec((err,orders)=>{
+        if(err){
+            return res.status(400).json({
+                error:"Cannot load all the orders"
+            })
+        }
+        res.json(orders)
+    })
+
+}
+exports.getOrderStatus=(req,res)=>{ 
+    res.json(Order.schema.path("status").enumValues)
+
+}
+
+exports.UpdateOrderStatus=(req,res)=>{ 
+    
+    Order.update(
+        {_id:req.body.orderId},
+        {$set:{status:req.body.status}}
+        ,(err,order)=>{
+            if(err){
+                return res.status(400).json({
+                    error:"cannot update order status"
+                })
+            }
+            res.json(order)
+        }
+    )
+}
