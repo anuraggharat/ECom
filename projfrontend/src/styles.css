@@ -1,9 +1,22 @@
+:root{
+  --primary-color:#FF0073;
+  --secondary-color:#ECDC47;
+  --tertiary-color:#57C7E4;
+  --one:#FCE7F6;
+  --two:#E3EAF8;
+  --three:#FECBE2;
+  --four:#FFF6FB;
+  --robo:'Roboto', sans-serif;
+  --nuni:'Nunito', sans-serif;
+  --mon:'Montserrat', sans-serif;
+}
+
 .btn,
 .jumbotron,
 .nav :hover {
+
   border-radius: 0px;
 }
-
 body {
-  background: #343a40;
+  background: linear-gradient(to right,var(--primary-color),var(--secondary-color),var(--tertiary-color));
 }
