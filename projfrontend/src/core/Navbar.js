@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link,withRouter} from 'react-router-dom'
-
+import {GiRunningShoe} from 'react-icons/gi'
 const currentTab = (window,path)=>{
     if(window.location.pathname === path){
         return {color:"#FF0073"}
@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a>
-                <h1 className="logo">ROVE</h1>
+            <h1 className="logo"><span>ROVE</span><GiRunningShoe /></h1>
             </a>
             <ul className="nav navbar-nav ml-auto">
                 <li className="nav-link" >
@@ -30,11 +30,11 @@ const Navbar = () => {
                 <li className="nav-link">
                     <Link to="/" style={currentTab(window,"/about")}>About</Link>
                 </li>
-                <button className="btn btn-warning">
-                    <Link to="/" style={currentTab(window,"/login")}>Login</Link>
+                <button className="btn-login mr-2">
+                    <Link to="/" >Login</Link>
                 </button>
-                <button className="btn btn-warning">
-                    <Link to="/" style={currentTab(window,"/signup")}>Signup</Link>
+                <button className="btn-signup mr-2">
+                    <Link to="/">Signup</Link>
                 </button>
                 
             </ul>
