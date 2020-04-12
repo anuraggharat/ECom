@@ -10,6 +10,10 @@
   --nuni:'Nunito', sans-serif;
   --mon:'Montserrat', sans-serif;
 }
+*{
+  box-sizing: border-box !important;
+  overflow-x: hidden;
+}
 /* body{
   font-family: 'Anton', sans-serif;
 font-family: 'Lobster', cursive;
@@ -28,6 +32,12 @@ font-family: 'Amatic SC', cursive;
 /* .signupcontainer{
   height: 100vh !important;
 } */
+.landing{
+  /* background: linear-gradient(to right,var(--one),var(--two),var(--three),var(--four)); */
+  background: linear-gradient(to right,var(--two),var(--three));
+  width: 100vw;
+  min-height: 100vh;
+}
 .signuppic{
   max-height: 100vh;
   min-width: 100%;
@@ -50,6 +60,25 @@ font-family: 'Amatic SC', cursive;
 .social-media-button:hover{
   color: black;
   transition:1s ease;
+}
+.btn-landing{
+  letter-spacing: 2px;
+  background-color: white;
+  width: 150px;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  border-radius: 20px;
+  border: none;
+}
+.btn-landing:hover{
+  transition: .5s ease-in-out;
+  letter-spacing: 10px;
+  background-color: white;
+  width: 150px;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  border-radius: 20px;
+  border: none;
 }
 .logo{
   font-size: 30px;  
