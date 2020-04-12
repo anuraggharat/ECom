@@ -25,11 +25,14 @@ font-family: 'Amatic SC', cursive;
 .w-80{
   width: 85vw;
 }
-.signupcontainer{
+/* .signupcontainer{
   height: 100vh !important;
-}
+} */
 .signuppic{
   max-height: 100vh;
+  min-width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 .social-media-button{
   font-size: 40px;
@@ -74,16 +77,46 @@ font-family: 'Amatic SC', cursive;
   background-color: var(--primary-color);
   border-radius: 20px;
 }
+.btn-secondary{
+  background-color: var(--tertiary-color);
+  color: white;
+  border: none;
+  padding:5px 25px ;
+  border-radius: 20px;
+  opacity: .7;
+}
+.btn-secondary:hover{
+  opacity: 1;
+  background-color: var(--tertiary-color);
+  border-radius: 20px;
+}
 .btn-signup{
   background-color: var(--three);
   border: none;
   padding:5px 25px ;
   border-radius: 20px;
 }
-.btn-login>a,.btn-signup>a{
+.btn-primary>a,.btn-secondary>a{
   color:white;
 }
 body {
   font-family: var(--mon);
 
+}
+.layer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  top: 0px;
+  opacity: .3;
+}
+.layer>p{
+  color: black !important;
+}
+.bg-primary{
+  background-color: var(--primary-color) !important;
+}
+.bg-secondary{
+  background-color: var(--tertiary-color) !important;
 }

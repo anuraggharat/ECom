@@ -30,10 +30,10 @@ const Navbar = () => {
                 <li className="nav-link">
                     <Link to="/" style={currentTab(window,"/about")}>About</Link>
                 </li>
-                <button className="btn-login mr-2">
-                    <Link to="/" >Login</Link>
+                <button className="btn-primary mr-2">
+                    <Link to="/signin" >Login</Link>
                 </button>
-                <button className="btn-signup mr-2">
+                <button className="btn-secondary mr-2">
                     <Link to="/signup" style={currentTab(window,"/signup")}>Signup</Link>
                 </button>
                 
