@@ -22,6 +22,15 @@ font-family: 'Amatic SC', cursive;
 .text-first{
   color: var(--primary-color);
 }
+.w-80{
+  width: 85vw;
+}
+.signupcontainer{
+  height: 100vh !important;
+}
+.signuppic{
+  max-height: 100vh;
+}
 .social-media-button{
   font-size: 40px;
   color: gray;
@@ -52,11 +61,17 @@ font-family: 'Amatic SC', cursive;
   font-size: 24px;
   letter-spacing: 20px;
 }
-.btn-login{
+.btn-primary{
   background-color: var(--primary-color);
   color: white;
   border: none;
   padding:5px 25px ;
+  border-radius: 20px;
+  opacity: .7;
+}
+.btn-primary:hover{
+  opacity: 1;
+  background-color: var(--primary-color);
   border-radius: 20px;
 }
 .btn-signup{

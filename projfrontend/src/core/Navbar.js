@@ -34,7 +34,7 @@ const Navbar = () => {
                     <Link to="/" >Login</Link>
                 </button>
                 <button className="btn-signup mr-2">
-                    <Link to="/">Signup</Link>
+                    <Link to="/signup" style={currentTab(window,"/signup")}>Signup</Link>
                 </button>
                 
             </ul>
