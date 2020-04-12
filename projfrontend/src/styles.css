@@ -10,7 +10,30 @@
   --nuni:'Nunito', sans-serif;
   --mon:'Montserrat', sans-serif;
 }
-
+.text-first{
+  color: var(--primary-color);
+}
+.social-media-button{
+  font-size: 40px;
+  color: gray;
+  margin-right: 70px;
+}
+.social-media-links{
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+.social-media-links:hover{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.social-media-button:hover{
+  color: black;
+  transition:1s ease;
+}
+.logo{
+  font-family: monospace;
+  letter-spacing: 10px;
+}
 .btn,
 .jumbotron,
 .nav :hover {
@@ -18,5 +41,6 @@
   border-radius: 0px;
 }
 body {
+  font-family: var(--mon);
   background: linear-gradient(to right,var(--primary-color),var(--secondary-color),var(--tertiary-color));
 }
