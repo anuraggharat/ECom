@@ -5,10 +5,6 @@ import { isAuthenticated } from '../auth/helper'
 import { Link } from 'react-router-dom'
 
 
-const adminLeftSide =()=>{
-
-}
-
 
 
 const AdminDashboard = () => {
@@ -28,7 +24,7 @@ const AdminDashboard = () => {
                         <nav className="bg-dark p-3 nav nav-pills flex-column justify-content-around flex-sm-row">
                             <Link>Add a new Product</Link>
                             <Link>Update a Product</Link>
-                            <Link>Add a category</Link>
+                            <Link to="/admin/create/category">Add a category</Link>
                             <Link>Update Category</Link>
                             <Link>All Orders</Link>
                         </nav>
