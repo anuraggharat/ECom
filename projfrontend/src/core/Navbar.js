@@ -1,6 +1,11 @@
 import React from 'react'
-import {Link,withRouter} from 'react-router-dom'
+import {Link,withRouter, useHistory} from 'react-router-dom'
 import {GiRunningShoe} from 'react-icons/gi'
+import { signout,isAuthenticated } from '../auth/helper'
+import { FaSignOutAlt } from 'react-icons/fa'
+
+
+
 const currentTab = (window,path)=>{
     if(window.location.pathname === path){
         return {color:"#FF0073"}
@@ -12,6 +17,7 @@ const currentTab = (window,path)=>{
 
 
 const Navbar = () => {
+    const history = useHistory()
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a>
@@ -30,12 +36,29 @@ const Navbar = () => {
                 <li className="nav-link">
                     <Link to="/" style={currentTab(window,"/about")}>About</Link>
                 </li>
+                {!isAuthenticated() && (
+                    
+                <li className="nav-link">
+
+                    
                 <button className="btn-primary mr-2">
                     <Link to="/signin" >Login</Link>
                 </button>
-                <button className="btn-secondary mr-2">
-                    <Link to="/signup" style={currentTab(window,"/signup")}>Signup</Link>
-                </button>
+                </li >
+                )}
+                {isAuthenticated() && (
+                    <li  className="nav-link">
+                    <button className="btn btn-primary" onClick={()=>{
+                        signout(()=>{
+                            history.push("/")
+                        })
+                    }}>
+                        <FaSignOutAlt />
+                    </button>
+                </li>
+            
+                )}
+                
                 
             </ul>
             
