@@ -134,8 +134,12 @@
 }
 body {
   font-family: var(--mon);
-
 }
+a:hover{
+  text-decoration: none;
+}
+
+
 .layer{
   position: absolute;
   height: 100%;

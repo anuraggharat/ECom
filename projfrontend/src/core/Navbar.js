@@ -24,30 +24,30 @@ const Navbar = () => {
             <h1 className="logo"><span>ROVE</span><GiRunningShoe /></h1>
             </a>
             <ul className="nav navbar-nav ml-auto">
-                <li className="nav-link" >
+                <li className="nav-link my-auto mr-5">
                     <Link to="/" style={currentTab(window,"/")}>Home</Link>
                 </li>
-                <li className="nav-link">
+                <li className="nav-link  my-auto mr-5">
                     <Link to="/" style={currentTab(window,"/shop")}>Shop</Link>
                 </li>
 
                 {isAuthenticated() && isAuthenticated().user.role === 0 &&(
-                                <li className="nav-link">
+                                <li className="nav-link my-auto mr-5" >
                                     <Link to="/user/dashboard" style={currentTab(window,"/user/dashboard")}><FaUserAlt /> </Link>
                                 </li>
                 ) }
                 {isAuthenticated() && isAuthenticated().user.role === 1 &&(
-                                <li className="nav-link">
+                                <li className="nav-link my-auto mr-5">
                                     <Link to="/admin/dashboard" style={currentTab(window,"/admin/dashboard")}><FaUserSecret/> </Link>
                                 </li>
                 )}
 
-                <li className="nav-link">
+                <li className="nav-link my-auto mr-5">
                     <Link to="/" style={currentTab(window,"/about")}>About</Link>
                 </li>
                 {!isAuthenticated() && (
                     
-                <li className="nav-link">
+                <li className="nav-link my-auto mr-5">
 
                     
                 <button className="btn-primary mr-2">
@@ -56,13 +56,13 @@ const Navbar = () => {
                 </li >
                 )}
                 {isAuthenticated() && (
-                    <li  className="nav-link">
+                    <li  className="nav-link my-auto">
                     <button className="btn btn-primary" onClick={()=>{
                         signout(()=>{
                             history.push("/")
                         })
                     }}>
-                        <FaSignOutAlt />
+                        Logout <FaSignOutAlt />
                     </button>
                 </li>
             
