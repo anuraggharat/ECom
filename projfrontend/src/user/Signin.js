@@ -22,7 +22,7 @@ const Signin = () => {
     const onSubmit = event=>{
         event.preventDefault();
         setValues({...values,error:false,loading:true})
-        .signin({email,password})
+        signin({email,password})
             .then(data=>{
                 if(data.error){
                     setValues({...values,error:data.error,loading:true})
@@ -60,7 +60,7 @@ const Signin = () => {
     }
     const errorMessage =()=>{
         return (
-            <div style={{display:error ? "":"none"}}>
+            <div className="alert alert-danger" style={{display:error ? "":"none"}}>
             {error}
         </div>
         )
@@ -86,9 +86,9 @@ const Signin = () => {
                             <input onChange={handleChange("email")} className="form-control" type="email" value={email} />
                             <label for="fname" className="mt-3">Password</label>
                             <input onChange={handleChange("password")} className="form-control"  type="password" value={password} />
-                            <button className="btn-secondary mx-auto mt-3 ">Signin</button>
-                            {loadingMessage}
-                            {errorMessage}
+                            <button className="btn-secondary mx-auto mt-3 " type="submit">Signin</button>
+                            {loadingMessage()}
+                            {errorMessage()}
                         </form>
                         <div className="w-100">
                             <p>New to ROVE?<Link> Create a Account</Link></p>

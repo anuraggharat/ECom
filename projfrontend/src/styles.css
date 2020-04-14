@@ -14,29 +14,34 @@
   box-sizing: border-box !important;
   overflow-x: hidden;
 }
-/* body{
-  font-family: 'Anton', sans-serif;
-font-family: 'Lobster', cursive;
-font-family: 'Indie Flower', cursive;
-font-family: 'Dancing Script', cursive;
-font-family: 'Bangers', cursive;
-font-family: 'Shadows Into Light', cursive;
-font-family: 'Amatic SC', cursive;
-} */
+
 .text-first{
   color: var(--primary-color);
 }
 .w-80{
   width: 85vw;
 }
-/* .signupcontainer{
-  height: 100vh !important;
-} */
 .landing{
-  /* background: linear-gradient(to right,var(--one),var(--two),var(--three),var(--four)); */
   background: linear-gradient(to right,var(--two),var(--three));
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+}
+.landinglogo{
+  letter-spacing: 25px;
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  font-family:'Amatic SC', cursive ;
+}
+.landingtext h1{
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+}
+.landingtext p{
+ font-size: 16px;
+}
+.mainimg{
+  height: 100%;
+  width: 70%;
 }
 .signuppic{
   max-height: 100vh;
@@ -64,18 +69,17 @@ font-family: 'Amatic SC', cursive;
 .btn-landing{
   letter-spacing: 2px;
   background-color: white;
-  width: 150px;
-  padding: 10px 20px;
+  width: 175px;
+  font-size: 24px;
+  padding: 15px 20px;
   color: var(--primary-color);
   border-radius: 20px;
   border: none;
 }
 .btn-landing:hover{
   transition: .5s ease-in-out;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   background-color: white;
-  width: 150px;
-  padding: 10px 20px;
   color: var(--primary-color);
   border-radius: 20px;
   border: none;

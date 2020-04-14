@@ -12,9 +12,9 @@ export default function Footer() {
                 <Link className="mx-4 social-media-links">Terms And Conditions</Link>
             
             </div>
-            <div className="row container-fluid m-0 py-4">
-                <div className="col-md-8">
-                    <h1 className="logo">ROVE</h1>
+            <div className="row container-fluid  py-4">
+                <div className="col-md-8 ">
+                    <h1 className="footerlogo">ROVE</h1>
                     <p>ROVE a online shopping portal for buying shoes.</p>
                 </div>
                 <div className="col-md-4 d-flex justify-content-start text-center align-content-center">
