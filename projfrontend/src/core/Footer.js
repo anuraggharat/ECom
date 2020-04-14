@@ -3,7 +3,7 @@ import {FaHeart, FaFacebook, FaInstagram, FaTwitter} from  'react-icons/fa'
 import { Link } from 'react-router-dom'
 export default function Footer() {
     return (
-        <footer className="bg-white">
+        <footer className="bg-light">
             <div className="container-fluid border-bottom d-flex justify-content-center py-3">
             
                 <Link className="mx-4 social-media-links">Find A Store</Link>
