@@ -22,10 +22,10 @@ const AdminDashboard = () => {
                     </div>
                     <div className="container-fluid py-3">
                         <nav className="bg-dark p-3 nav nav-pills flex-column justify-content-around flex-sm-row">
-                            <Link>Add a new Product</Link>
+                            <Link to="/admin/create/product">Add a new Product</Link>
                             <Link>Update a Product</Link>
                             <Link to="/admin/create/category">Add a category</Link>
-                            <Link>Update Category</Link>
+                            <Link to="/admin/categories">Manage Category</Link>
                             <Link>All Orders</Link>
                         </nav>
                     </div>
