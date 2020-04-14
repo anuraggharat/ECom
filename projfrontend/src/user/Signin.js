@@ -39,10 +39,10 @@ const Signin = () => {
     const performRedirect=()=>{
         if(didRedirect){
             if(user && user.role===1){
-                return <p>Redirect to admin</p>
+                return <Redirect to="/admin/dashboard" />
             }  
             else{
-                return <p>Redirect to usert</p>
+                return <Redirect to="/user/dashboard" />
             }
         }
         if(isAuthenticated()){
@@ -89,6 +89,7 @@ const Signin = () => {
                             <button className="btn-secondary mx-auto mt-3 " type="submit">Signin</button>
                             {loadingMessage()}
                             {errorMessage()}
+                            {performRedirect()}
                         </form>
                         <div className="w-100">
                             <p>New to ROVE?<Link> Create a Account</Link></p>

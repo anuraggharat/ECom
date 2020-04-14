@@ -2,7 +2,7 @@ import React from 'react'
 import {Link,withRouter, useHistory} from 'react-router-dom'
 import {GiRunningShoe} from 'react-icons/gi'
 import { signout,isAuthenticated } from '../auth/helper'
-import { FaSignOutAlt } from 'react-icons/fa'
+import { FaSignOutAlt, FaUserAlt, FaUserSecret } from 'react-icons/fa'
 
 
 
@@ -30,9 +30,18 @@ const Navbar = () => {
                 <li className="nav-link">
                     <Link to="/" style={currentTab(window,"/shop")}>Shop</Link>
                 </li>
-                <li className="nav-link">
-                    <Link to="/" style={currentTab(window,"/dashboard")}>Account</Link>
-                </li>
+
+                {isAuthenticated() && isAuthenticated().user.role === 0 &&(
+                                <li className="nav-link">
+                                    <Link to="/user/dashboard" style={currentTab(window,"/user/dashboard")}><FaUserAlt /> </Link>
+                                </li>
+                ) }
+                {isAuthenticated() && isAuthenticated().user.role === 1 &&(
+                                <li className="nav-link">
+                                    <Link to="/admin/dashboard" style={currentTab(window,"/admin/dashboard")}><FaUserSecret/> </Link>
+                                </li>
+                )}
+
                 <li className="nav-link">
                     <Link to="/" style={currentTab(window,"/about")}>About</Link>
                 </li>
