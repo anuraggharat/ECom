@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
-import { getProduct, createProduct } from "./helper/adminapicall";
+import { getProduct, updateProduct, getAllCategories } from "./helper/adminapicall";
 import { isAuthenticated } from "../auth/helper/index";
 
-const UpdateProduct = () => {
+const UpdateProduct = ({match}) => {
   const { user, token } = isAuthenticated();
 
   const [values, setValues] = useState({
@@ -51,19 +51,33 @@ const UpdateProduct = () => {
             category:data.category._id,
             stock:data.stock,
             formData:new FormData()
+            
         });
+        preloadCategories()
       }
     });
   };
+  const preloadCategories=()=>{
+      getAllCategories().then(data=>{
+          if(data.error){
+            setValues({ ...values, error: data.error });
+          }
+          else{
+              setValues({
+                  categories:data , formData : new FormData()
+              })
+          }
+      })
+  }
 
   useEffect(() => {
-    preload();
+    preload(match.params.productId);
   }, []);
 
   const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    createProduct(user._id, token, formData).then(data => {
+    updateProduct(match.params.productId,user._id, token, formData).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {

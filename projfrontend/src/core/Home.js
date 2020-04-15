@@ -3,6 +3,7 @@ import {API} from '../backend'
 import Base from '../core/Base'
 import Img from "../images/main.png"
 import {  FaArrowRight } from 'react-icons/fa'
+import Card from './Card'
 export default function Home() {
     console.log("API IS ",API)
     return (
@@ -19,6 +20,18 @@ export default function Home() {
                     <img src={Img} className="mainimg"></img>
                 </div>
             </div>
+        </div>
+        <div className="container bg-light mx-auto ">
+            <div className="row">
+                <h1>Featured shoes</h1>
+            </div>
+            <div className="row justify-content-around">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+            </div>
+            
         </div>
         </Base>
         
