@@ -54,7 +54,7 @@ exports.createProduct=(req,res)=>{
         }
         product.save((err,product)=>{
             if(err){
-                es.status(400).json({
+                res.status(400).json({
                     error:"Couldnt save a product in db"
                 })
             }
