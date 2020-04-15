@@ -1,11 +1,35 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {API} from '../backend'
 import Base from '../core/Base'
 import Img from "../images/main.png"
 import {  FaArrowRight } from 'react-icons/fa'
 import Card from './Card'
+import { getProducts } from './helper/coreapicalls'
+
+
 export default function Home() {
-    console.log("API IS ",API)
+    
+    const [products, setProducts] = useState([])
+    const [error,setError]=useState(false);
+
+    const loadAllProducts=()=>{
+        getProducts().then(data=>{
+           
+            if(data.error){
+                console.log(data.error)
+
+            }else{
+                setProducts(data)
+                console.log(products)
+                
+            }
+        })
+    
+    }
+    useEffect(()=>{
+        loadAllProducts()
+    },[])
+
     return (
         <Base>
         <div className="container-fluid landing">
@@ -21,15 +45,20 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className="container bg-light mx-auto ">
+        <div className="container bg-white mx-auto ">
             <div className="row">
                 <h1>Featured shoes</h1>
             </div>
             <div className="row justify-content-around">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+
+                {products.map(product=>{
+                    return(
+                        <Card key={product._id} product={product}/>
+                    )
+                })}
+
+                    
+              
             </div>
             
         </div>

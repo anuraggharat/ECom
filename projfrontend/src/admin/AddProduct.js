@@ -300,7 +300,7 @@ const AddProduct = () => {
           <option>Select</option>
           {categories &&
             categories.map((cate, index) => (
-              <option key={index} >
+              <option key={index} value={cate._id} >
                 {cate.name}
               </option>
             ))}
