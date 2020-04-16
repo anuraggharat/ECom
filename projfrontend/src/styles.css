@@ -22,7 +22,7 @@
   width: 85vw;
 }
 .cardheight{
-  max-height: 250px;
+  height: 250px;
 }
 .landing{
   background: linear-gradient(to right,var(--two),var(--three));

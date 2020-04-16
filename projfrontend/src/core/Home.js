@@ -53,8 +53,8 @@ export default function Home() {
 
                 {products.map(product=>{
                     return(
-                        <Card key={product._id} product={product} removeFromCart={true}
-                        addtoCart={false} className="card w-100 bg-light col-3 border-0 shadow-lg p-0 mx-1 my-3 h-100"/>
+                        <Card key={product._id} product={product} removeFromCart={false}
+                        addtoCart={true} className="card w-100 bg-light col-3 border-0 shadow-lg p-0 mx-1 my-3 h-100"/>
                     )
                 })}
 

@@ -3,32 +3,42 @@ import { FaCartPlus } from 'react-icons/fa'
 import ImageHelper from './helper/imagehelper'
 import {MdRemoveShoppingCart} from 'react-icons/md'
 import { Redirect } from 'react-router-dom'
-import { addItemToCart } from './helper/carthelper'
+import { addItemToCart, removeItemFromCart } from './helper/carthelper'
 
-const Card = ({product,className,removeFromCart,addtoCart,key}) => {
+const Card = ({product,
+    className,
+    removeFromCart,
+    addtoCart,
+    setReload = f => f,
+    //   function(f){return f}
+    reload = undefined
+}) => {
 
     const [redirect, setRedirect] = useState(false)
 
     const [count, setcount] = useState(product.count)
+    
+    const addToCart=()=>{
+        addItemToCart(product,()=>{
+            setRedirect(true)
+        })
 
-    const showCart=(add)=>{
+    }
+    const showAddToCart=addtoCart=>{
         return(addtoCart && <button className="btn bg-transparent" onClick={addToCart}>
             <FaCartPlus className="text-success" />
         </button>) 
         
     }
-    const hideCart=(remove)=>{
-        return (removeFromCart && <button className="btn bg-transparent">
+    const showRemoveFromCart=(removeFromCart)=>{
+        return (removeFromCart && 
+        <button className="btn bg-transparent" onClick={()=>{removeItemFromCart(product._id);
+        setReload(!reload)}}>
         <MdRemoveShoppingCart />
     </button>)
        
     }
-    const addToCart=()=>{
-        addItemToCart(product,()=>{
-            setRedirect(true)
-        })
-        getARedirect()
-    }
+
 
     const getARedirect = (redirect)=>{
 
@@ -51,8 +61,8 @@ const Card = ({product,className,removeFromCart,addtoCart,key}) => {
     <h5 className="text-muted">₹ {product.price}</h5>
                 
     {getARedirect(redirect)}
-                <h5>{hideCart(false)}</h5>
-                <h5>{showCart(true)}</h5>
+                <h5>{showRemoveFromCart(removeFromCart)}</h5>
+                <h5>{showAddToCart(addtoCart)}</h5>
                 </div>
             </div>
         </div>
