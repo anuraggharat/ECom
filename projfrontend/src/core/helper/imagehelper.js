@@ -6,7 +6,7 @@ const ImageHelper = (id) => {
     return (
         <>
             <img src={`${API}product/photo/${id.id}`}
-             className="card-img-top h-75"/>
+             className="card-img-top cardheight"/>
         </>
     )
 }

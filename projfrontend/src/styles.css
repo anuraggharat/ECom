@@ -21,6 +21,9 @@
 .w-80{
   width: 85vw;
 }
+.cardheight{
+  max-height: 250px;
+}
 .landing{
   background: linear-gradient(to right,var(--two),var(--three));
   width: 100vw;

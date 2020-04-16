@@ -21,7 +21,7 @@ const Cart = () => {
             product={product}
             removeFromCart={true}
             addtoCart={false}
-            className="col-12 w-100"
+            className="col-12 w-50 mx-auto bg-light shadow-lg mt-5"
           />
         ))}
       </div>
