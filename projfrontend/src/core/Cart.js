@@ -3,6 +3,7 @@ import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/carthelper";
+import StripeCheckout from "./StripeCheckout";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -33,6 +34,10 @@ const Cart = () => {
     return (
       <div>
         <h2>This section for checkout</h2>
+        <StripeCheckout
+        products={products}
+        setReload={setReload}
+        />
       </div>
     );
   };
