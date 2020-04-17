@@ -3,7 +3,7 @@ import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/carthelper";
-import StripeCheckout from "./StripeCheckout";
+import Payment from './Payment'
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +12,7 @@ const Cart = () => {
     setProducts(loadCart());
   }, [reload]);
 
-  const loadAllProducts = () => {
+  const loadAllProducts = (products) => {
     return (
       <div className="container w-100">
         <h2>This section is to load products</h2>
@@ -33,11 +33,8 @@ const Cart = () => {
   const loadCheckout = () => {
     return (
       <div>
-        <h2>This section for checkout</h2>
-        <StripeCheckout
-        products={products}
-        setReload={setReload}
-        />
+        <h2><Payment  products={products} setReload={setReload} /></h2>
+
       </div>
     );
   };
@@ -45,7 +42,7 @@ const Cart = () => {
   return (
     <Base >
       <div className="container row mx-auto my-5 bg-light text-center p-5">
-        <div className="col-6">{loadAllProducts()}</div>
+        <div className="col-6">{products.length==0?(<h3>No Products in your cart</h3>)  :loadAllProducts(products)}</div>
         <div className="col-6">{loadCheckout()}</div>
       </div>
     </Base>

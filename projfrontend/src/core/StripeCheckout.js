@@ -49,7 +49,7 @@ const StripeCheckout=({
     const showStripeButton=()=>{
         return isAuthenticated() ? (
             <StripeCheckoutButton 
-                stripeKey=""
+                stripeKey="pk_test_RwZj7L2JiUP3ukOyLQxFvbcN00sm0q18zR"
                 token={makePayment}
                 amount={getFinalPrice()*100}
                 name="Make a Payment"
