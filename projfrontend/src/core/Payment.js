@@ -13,7 +13,8 @@ const Payment = ({products,setReload=f=>f,reload=undefined}) => {
         loading:false,
         success:false,
         clientToken:null,
-        error:""
+        error:"",
+        instance:{}
     })
     const userId = isAuthenticated() && isAuthenticated().user._id
     const token = isAuthenticated() && isAuthenticated().token
@@ -22,7 +23,7 @@ const Payment = ({products,setReload=f=>f,reload=undefined}) => {
     const getToken =(userId,token)=>{
         getmeToken(userId,token).then(info=>{
             
-            
+            console.log("information",info)
             if(info.error){
                 setInfo({...info,error:info.error})
             }else{
@@ -32,13 +33,28 @@ const Payment = ({products,setReload=f=>f,reload=undefined}) => {
         })
     }
 
+    const showbtdropin=()=>{
+        return (
+            <div >
+                {info.clientToken!==null && products.length>0?(<div>
+                    <DropIn
+                    options={{authorization:info.clientToken}}
+                    onInstance={instance => (info.instance=instance)}
+                    
+                    />
+                    <button onClick={()=>{}}>BUY</button>
+                </div>):(<h3>Please Log in</h3>)}
+            </div>
+        )
+    }
+
     useEffect(()=>{getToken(userId,token)}
 
     ,[])
 
     return (
         <div>
-            Brain tree
+            {showbtdropin()}
         </div>
     )
 }
