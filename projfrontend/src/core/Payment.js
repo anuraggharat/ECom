@@ -18,10 +18,10 @@ const Payment = ({products,setReload=f=>f,reload=undefined}) => {
     const userId = isAuthenticated() && isAuthenticated().user._id
     const token = isAuthenticated() && isAuthenticated().token
 
-
+    console.log(userId,token)
     const getToken =(userId,token)=>{
         getmeToken(userId,token).then(info=>{
-            console.log(info)
+            
             
             if(info.error){
                 setInfo({...info,error:info.error})
