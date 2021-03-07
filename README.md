@@ -1,6 +1,3 @@
 # ECom
-Shoes shopping website built on MERN stack.
-The front end is built using REACT and backend on node.
-The website has two paymemt gateways
-1>Stripe
-2>BrainTree
+A full-fledged E-commerce Shoes Shopping website developed on MERN stack. It has two payment gateways integrated namely PayPal and Stripe.
+![Alt text](readme_images/2nd.png?raw=true "sign_in") 
